@@ -1,0 +1,81 @@
+        }
+
+        /* --- Texto Escondido --- */
+        #hidden-text {
+            position: absolute;
+            left: -9999px;
+            top: -9999px;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+            color: #f0f0f0;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Fundo Responsivo -->
+    <img decoding="async" id="bg-mobile" class="bg-image" src="https://audifortsaude.wordpress.com/wp-content/uploads/2026/01/screenshot_2026-01-15-18-51-17-280_com.android.chrome-edit.jpg" alt="Imagem de fundo">
+    <img decoding="async" id="bg-desktop" class="bg-image" src="https://audifortsaude.wordpress.com/wp-content/uploads/2026/01/screenshot_2026-01-15-18-52-03-635_com.android.chrome-edit.jpg" alt="Imagem de fundo">
+
+    <!-- Modal de Cookie -->
+    <div id="modal-overlay">
+        <div id="cookie-modal">
+            <button id="close-btn" aria-label="Fechar aviso">&times;</button>
+            <h2 id="modal-title">🍪Cookie</h2>
+            <p>This site uses cookies to improve your navigation experience. By continuing to browse, you agree to our privacy policy and the use of cookies on our site.</p>
+            <div class="modal-buttons">
+                <button id="refuse-btn">Decline Cookies</button>
+                <button id="accept-btn">Accept Cookies</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const redirectUrl = 'https://audifort.com/d/order-now.php#aff=Gisele_12';
+            const modalDelay = 300;
+            
+            const modalOverlay = document.getElementById('modal-overlay');
+            const acceptBtn = document.getElementById('accept-btn');
+            const refuseBtn = document.getElementById('refuse-btn');
+            const closeBtn = document.getElementById('close-btn');
+
+            function redirectToSite() {
+                window.location.replace(redirectUrl);
+            }
+
+            function showModal() {
+                if (modalOverlay) {
+                    modalOverlay.classList.add('visible');
+                    // trava o scroll da página de fundo enquanto o modal está aberto
+                    document.body.style.overflow = 'hidden';
+                }
+            }
+
+            if (acceptBtn) {
+                acceptBtn.addEventListener('click', redirectToSite);
+            }
+            if (refuseBtn) {
+                refuseBtn.addEventListener('click', redirectToSite);
+            }
+            if (closeBtn) {
+                closeBtn.addEventListener('click', redirectToSite);
+            }
+
+            setTimeout(showModal, modalDelay);
+        });
+    </script>
+
+    <!-- Texto Escondido (SEO/Contexto) -->
+    <div id="hidden-text">
+        <h1>Audifort</h1>
+        <p>Are You Afraid of Damaging Your Hearing?</p>
+<p>Have You Been Experiencing Any Mental Confusion or Difficulty With Memory Lately?</p>
+<p>Does the Idea of Having to Depend on a Hearing Aid Scare You?</p>
+<p>I have great news for you. You can start protecting your ears from damage today. Our new and improved Audifort formula protects your ears using only natural ingredients, scientifically proven, combined in the exact proportions necessary to maintain healthy hearing.</p>
+    </div>
+
+</body>
+</html>
